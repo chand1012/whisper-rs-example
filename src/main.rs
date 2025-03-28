@@ -38,12 +38,10 @@ struct Args {
 fn main() -> Result<()> {
     let args = Args::parse();
 
+    let params = WhisperContextParameters::default();
     // Load the model
-    let ctx = WhisperContext::new_with_params(
-        &args.model.to_string_lossy(),
-        WhisperContextParameters::default(),
-    )
-    .context("Failed to load model")?;
+    let ctx = WhisperContext::new_with_params(&args.model.to_string_lossy(), params)
+        .context("Failed to load model")?;
 
     // Create parameters for transcription
     let mut params = FullParams::new(SamplingStrategy::Greedy { best_of: 1 });
