@@ -11,3 +11,9 @@ anyhow = "1.0.81"
 
 [target.'cfg(target_os = "macos")'.dependencies]
 whisper-rs = { version = "0.14.2", features = ["metal"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+whisper-rs = { version = "0.14.2", features = ["vulkan"] }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+whisper-rs = { version = "0.14.2", features = ["vulkan"] }
