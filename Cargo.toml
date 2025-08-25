@@ -8,6 +8,8 @@ whisper-rs = { version = "0.14.2" }
 clap = { version = "4.5.3", features = ["derive"] }
 symphonia = { version = "0.5.3", features = ["all"] }
 anyhow = "1.0.81"
+cpal = "0.15"
+num_cpus = "1.17.0"
 
 [target.'cfg(target_os = "macos")'.dependencies]
 whisper-rs = { version = "0.14.2", features = ["metal"] }
